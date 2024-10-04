@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f7f9fc; 
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5em;
+    background-color: #2c3e50;
+    padding: 15px;
+    border-radius: 8px;
+   
+}
+
+.page {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #34495e; 
+    border-radius: 10px;
+   
+}
+
+#addTaskButton {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+.btnDelete{
+    padding: 7px 9px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f5b520;
+    color: #ecf0f1;
+    margin: 5px;
+}
+
+
+.containers {
+    display: flex;
+    margin: 10px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.container-item {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    background-color: #ecf0f1; 
+    padding: 14px;
+    border-radius: 8px;
+    width: 340px;
+
+}
+
+.container-item h2 {
+    text-align: center;
+    color: #2c3e50; 
+    margin-bottom: 10px;
+}
+
+.task {
+    background-color: #ffffff; 
+    list-style: none;
+    color: #2c3e50;
+    cursor: move;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+   
+
+}
+#add {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f5b520;
+    color: white;
+ 
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #34495e;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+.dragStyle {
+    color: #fff;
+    background-color:  #f5b520; 
+    opacity: 0.75;
+}
+
+h3 {
+    color: #ecf0f1;
+    background-color: #2c3e50; 
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.buttonSign {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f5b520;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+
+#signOutButton {
+    padding: 5px 10px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 4px;
+    
+}
+.inputSign {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #34495e;
+    outline: none;
+}
+
+#signInButtonClick, #signUpButtonClick {
+    padding: 10px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+

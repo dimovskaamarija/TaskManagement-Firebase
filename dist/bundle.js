@@ -35508,6 +35508,35 @@ function getModularInstance(service) {
 
 /***/ }),
 
+/***/ "./src/firebase/firebaseConfig.js":
+/*!****************************************!*\
+  !*** ./src/firebase/firebaseConfig.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   app: () => (/* binding */ app),
+/* harmony export */   auth: () => (/* binding */ auth)
+/* harmony export */ });
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/esm/index.esm.js");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
+
+
+var firebaseConfig = {
+  apiKey: "AIzaSyA6sE3ieYtNmyqZX_RUBYqaWljOIBeuANQ",
+  authDomain: "task-management-b3e57.firebaseapp.com",
+  projectId: "task-management-b3e57",
+  storageBucket: "task-management-b3e57.appspot.com",
+  messagingSenderId: "214664072144",
+  appId: "1:214664072144:web:2840cc0f9d99a6b93087d5"
+};
+var app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);
+var auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.getAuth)(app);
+
+
+/***/ }),
+
 /***/ "./node_modules/@firebase/app/dist/esm/index.esm2017.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@firebase/app/dist/esm/index.esm2017.js ***!
@@ -38654,7 +38683,7 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/esm/index.esm.js");
+/* harmony import */ var _src_firebase_firebaseConfig__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../src/firebase/firebaseConfig */ "./src/firebase/firebaseConfig.js");
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/esm/index.esm.js");
 /* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/esm/index.esm.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -38664,17 +38693,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-var firebaseConfig = {
-  apiKey: "AIzaSyA6sE3ieYtNmyqZX_RUBYqaWljOIBeuANQ",
-  authDomain: "task-management-b3e57.firebaseapp.com",
-  projectId: "task-management-b3e57",
-  storageBucket: "task-management-b3e57.appspot.com",
-  messagingSenderId: "214664072144",
-  appId: "1:214664072144:web:2840cc0f9d99a6b93087d5"
-};
-var app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);
-var db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.getFirestore)(app);
-var auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.getAuth)(app);
+var db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.getFirestore)(_src_firebase_firebaseConfig__WEBPACK_IMPORTED_MODULE_0__.app);
 var todo = document.getElementById("toDoList");
 var inProgress = document.getElementById("inProgressList");
 var done = document.getElementById("doneList");
@@ -38921,7 +38940,7 @@ var signOutUser = /*#__PURE__*/function () {
         case 0:
           _context3.prev = 0;
           _context3.next = 3;
-          return (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(auth);
+          return (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(_src_firebase_firebaseConfig__WEBPACK_IMPORTED_MODULE_0__.auth);
         case 3:
           _context3.next = 8;
           break;

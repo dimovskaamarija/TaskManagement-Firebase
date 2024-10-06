@@ -1,43 +1,43 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development', // Change to 'production' for production builds
-  entry: './src/index.js', // Entry point for your application
+  mode: 'development', 
+  entry: './src/index.js', 
   output: {
-    filename: 'bundle.js', // Output filename for the bundled code
-    path: path.resolve(__dirname, 'dist'), // Output directory
-    clean: true, // Clean the output directory before each build
+    filename: 'bundle.js', 
+    path: path.resolve(__dirname, 'dist'), 
+    clean: true, 
   },
   module: {
     rules: [
         {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader'], // Add these loaders
+            use: ['style-loader', 'css-loader'], 
         },
       {
-        test: /\.js$/, // Apply this rule to .js files
-        exclude: /node_modules/, // Exclude the node_modules directory
+        test: /\.js$/, 
+        exclude: /node_modules/, 
         use: {
-          loader: 'babel-loader', // Use Babel to transpile JS
+          loader: 'babel-loader', 
           options: {
-            presets: ['@babel/preset-env'], // Use the preset for modern JavaScript
+            presets: ['@babel/preset-env'], 
           },
         },
       },
       {
-        test: /\.css$/, // Apply this rule to .css files
-        use: ['style-loader', 'css-loader'], // Use style-loader and css-loader
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader'], 
       },
     ],
   },
   resolve: {
-    extensions: ['.js'], // Resolve these extensions
+    extensions: ['.js'], 
   },
-  devtool: 'source-map', // Generate source maps for easier debugging
+  devtool: 'source-map', 
   devServer: {
-    static: path.join(__dirname, 'dist'), // Serve files from the dist directory
-    compress: true, // Enable gzip compression for everything served
-    port: 5500, // Port number for the dev server
+    static: path.join(__dirname, 'dist'), 
+    compress: true, 
+    port: 5500, 
   },
   performance: {
     hints: false,

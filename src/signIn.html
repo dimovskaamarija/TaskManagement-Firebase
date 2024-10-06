@@ -13,22 +13,10 @@
         <input type="password" id="signInPassword" placeholder="Password" required>
         <button id="signInButtonClick">Sign In</button> 
     </div>
-    <script type="module">
-        import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js';
-        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js';
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js';
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyA6sE3ieYtNmyqZX_RUBYqaWljOIBeuANQ",
-            authDomain: "task-management-b3e57.firebaseapp.com",
-            projectId: "task-management-b3e57",
-            storageBucket: "task-management-b3e57.appspot.com",
-            messagingSenderId: "214664072144",
-            appId: "1:214664072144:web:2840cc0f9d99a6b93087d5"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+    <script type="module" >
+        import { signInWithEmailAndPassword } from "firebase/auth";
+        import { getFirestore, doc, getDoc } from 'firebase/firestore';
+        import { app,auth } from '/src/firebase/firebaseConfig'
         const db = getFirestore(app);
 
         const signIn = async (event) => {
@@ -59,5 +47,6 @@
         const signInButton = document.getElementById('signInButtonClick');
         signInButton.addEventListener('click', signIn);
     </script>
+       
 </body>
 </html>

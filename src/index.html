@@ -44,21 +44,10 @@
         </div>
     </div>
     <script src="/dist/bundle.js" type="module"></script>
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js';
-        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js';
-    
-        const firebaseConfig = {
-            apiKey: "AIzaSyA6sE3ieYtNmyqZX_RUBYqaWljOIBeuANQ",
-            authDomain: "task-management-b3e57.firebaseapp.com",
-            projectId: "task-management-b3e57",
-            storageBucket: "task-management-b3e57.appspot.com",
-            messagingSenderId: "214664072144",
-            appId: "1:214664072144:web:2840cc0f9d99a6b93087d5"
-        };
-    
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+    <script type="module" >
+        import { app,auth } from "/src/firebase/firebaseConfig";
+        import { onAuthStateChanged } from "firebase/auth";
+
     
     
         onAuthStateChanged(auth, (user) => {
@@ -67,7 +56,6 @@
             const signOutButton = document.getElementById('signOutButton');
     
             if (user) {
-               
                 signInButton.style.display = 'none'; 
                 signUpButton.style.display = 'none'; 
                 signOutButton.style.display = 'block'; 
@@ -79,5 +67,6 @@
             }
         });
     </script>
+
 </body>
 </html>

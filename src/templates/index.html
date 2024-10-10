@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="/src/style.css" rel="stylesheet">
 </head>
 <body>  
     <h1>Task Management</h1>
     <div class="button-container">
-        <a id="signInButton" class="buttonSign" href="/src/signIn.html">Sign In</a>
-        <a id="signUpButton" href="/src/signUp.html" class="buttonSign">Sign Up</a>
+        <a id="signInButton" class="buttonSign" href="/src/templates/signIn.html">Sign In</a>
+        <a id="signUpButton" href="/src/templates/signUp.html" class="buttonSign">Sign Up</a>
         <button id="signOutButton" style="display: none;">Sign Out</button>
     </div>
     
@@ -43,30 +43,8 @@
             </div>
         </div>
     </div>
-    <script src="/dist/bundle.js" type="module"></script>
-    <script type="module" >
-        import { app,auth } from "/src/firebase/firebaseConfig";
-        import { onAuthStateChanged } from "firebase/auth";
-
-    
-    
-        onAuthStateChanged(auth, (user) => {
-            const signInButton = document.getElementById('signInButton');
-            const signUpButton = document.getElementById('signUpButton');
-            const signOutButton = document.getElementById('signOutButton');
-    
-            if (user) {
-                signInButton.style.display = 'none'; 
-                signUpButton.style.display = 'none'; 
-                signOutButton.style.display = 'block'; 
-            } else {
-             
-                signInButton.style.display = 'block'; 
-                signUpButton.style.display = 'block'; 
-                signOutButton.style.display = 'none'; 
-            }
-        });
-    </script>
+    <script src="/dist/index.bundle.js" type="module"></script>
+    <script src="/dist/auth.bundle.js"></script>
 
 </body>
 </html>

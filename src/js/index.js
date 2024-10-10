@@ -1,5 +1,4 @@
-import{app,auth} from '/src/firebase/firebaseConfig'
-import {  signOut } from "firebase/auth";
+import{app} from '../firebase/firebaseConfig'
 import { getFirestore, collection, getDocs, addDoc, doc, deleteDoc} from 'firebase/firestore';
 const db = getFirestore(app);
 let todo = document.getElementById("toDoList");
@@ -8,9 +7,7 @@ let done = document.getElementById("doneList");
 let addTaskButton = document.getElementById("addTaskButton");
 let input = document.getElementById("addInput");
 let containers = document.querySelectorAll(".container-item")
-
 loadContent();
-
 async function loadContent() {
     todo.innerHTML = ""
     inProgress.innerHTML = ""
@@ -35,6 +32,11 @@ async function loadContent() {
         console.error("Error loading data: ", error);
     }
 }
+
+    
+    
+
+
 
 async function addTaskToFirestore(taskValue) {
     try {
@@ -112,13 +114,3 @@ containers.forEach(container => {
         }
     })
 })
-const signOutUser = async () => {
-    try {
-        await signOut(auth);
-
-    } catch (error) {
-        console.error("Error signing out:", error.message);
-    }
-}
-const signOutButton = document.getElementById('signOutButton');
-signOutButton.addEventListener('click', signOutUser);

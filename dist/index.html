@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link href="/src/style.css" rel="stylesheet">
+<script defer src="index.bundle.js"></script><script defer src="auth.bundle.js"></script></head>
+<body>  
+    <h1>Task Management</h1>
+    <div class="button-container">
+        <a id="signInButton" class="buttonSign" href="/src/templates/signIn.html">Sign In</a>
+        <a id="signUpButton" href="/src/templates/signUp.html" class="buttonSign">Sign Up</a>
+        <button id="signOutButton" style="display: none;">Sign Out</button>
+    </div>
+    
+    <div class="page">
+        <div id="add"> 
+            <input id="addInput" type="text" placeholder="Add new To Do Item:">
+            <button id="addTaskButton">Add Task</button>
+        </div>
+    
+        <div class="containers">
+            <div class="container-item">
+                <h3>TO DO:</h3>
+                <div class="TODO" id="TODO">
+                    <ul id="toDoList" data-collection="ToDo"></ul>
+                </div>
+            </div>
+            
+            <div class="container-item">
+                <h3>IN PROGRESS:</h3>
+                <div class="PROGRESS" id="PROGRESS">
+                    <ul id="inProgressList" data-collection="InProgress"></ul>
+                </div>
+            </div>
+            
+            <div class="container-item">
+                <h3>DONE:</h3>
+                <div class="DONE" id="DONE">
+                    <ul id="doneList" data-collection="Done"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/dist/index.bundle.js" type="module"></script>
+    <script src="/dist/auth.bundle.js"></script>
+
+</body>
+</html>

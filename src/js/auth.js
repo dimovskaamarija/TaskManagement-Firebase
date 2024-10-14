@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const signOutUser = async () => {
     try {
         await signOut(auth);
+        location.reload()
     } catch (error) {
         console.error("Error signing out:", error.message);
     }
@@ -45,6 +46,7 @@ const signUp = async (event) => {
         const user = userCredentials.user;
         await setDoc(doc(db, "users", user.uid), {
             email: email,
+            user:user.uid
         });
         window.location.href = "../templates/signIn.html";
     } catch (error) {

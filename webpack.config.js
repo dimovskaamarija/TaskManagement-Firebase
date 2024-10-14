@@ -1,10 +1,14 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Import the plugin
 
 module.exports = {
   mode: 'development', 
-  entry: './src/index.js', 
+  entry:{
+    index: "./src/js/index.js",
+    auth: "./src/js/auth.js",
+  },
   output: {
-    filename: 'bundle.js', 
+    filename: '[name].bundle.js', 
     path: path.resolve(__dirname, 'dist'), 
     clean: true, 
   },
@@ -24,10 +28,6 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.css$/, 
-        use: ['style-loader', 'css-loader'], 
-      },
     ],
   },
   resolve: {
@@ -44,4 +44,21 @@ module.exports = {
     maxAssetSize: 512000,
     maxEntrypointSize: 512000,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html', 
+      template: './src/templates/index.html', 
+      chunks: ['index'], 
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'signIn.html',
+      template: './src/templates/signIn.html', 
+      chunks: ['auth'], 
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'signUp.html',
+      template: './src/templates/signUp.html', 
+      chunks: ['auth'], 
+    }),
+  ],
 };

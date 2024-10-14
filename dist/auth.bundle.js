@@ -38590,17 +38590,18 @@ var signOutUser = /*#__PURE__*/function () {
           _context.next = 3;
           return (0,_firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(_firebase_firebaseConfig__WEBPACK_IMPORTED_MODULE_0__.auth);
         case 3:
-          _context.next = 8;
+          location.reload();
+          _context.next = 9;
           break;
-        case 5:
-          _context.prev = 5;
+        case 6:
+          _context.prev = 6;
           _context.t0 = _context["catch"](0);
           console.error("Error signing out:", _context.t0.message);
-        case 8:
+        case 9:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 5]]);
+    }, _callee, null, [[0, 6]]);
   }));
   return function signOutUser() {
     return _ref.apply(this, arguments);
@@ -38623,7 +38624,8 @@ var signUp = /*#__PURE__*/function () {
           user = userCredentials.user;
           _context2.next = 10;
           return (0,_firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.setDoc)((0,_firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.doc)(db, "users", user.uid), {
-            email: email
+            email: email,
+            user: user.uid
           });
         case 10:
           window.location.href = "../templates/signIn.html";
